@@ -218,7 +218,6 @@
             <el-form-item :label="$t('m.Two_Factor_Auth')">
               <el-switch
                 v-model="user.two_factor_auth"
-                :disabled="!user.real_tfa"
                 active-color="#13ce66"
                 inactive-color="#ff4949">
               </el-switch>
@@ -313,8 +312,6 @@
         this.showUserDialog = true
         api.getUser(id).then(res => {
           this.user = res.data.data
-          this.user.password = ''
-          this.user.real_tfa = this.user.two_factor_auth
         })
       },
       // 获取用户列表

@@ -56,7 +56,9 @@
                     :theme="theme"
                     @resetCode="onResetToTemplate"
                     @changeTheme="onChangeTheme"
-                    @changeLang="onChangeLang"></CodeMirror>
+                    @changeLang="onChangeLang"
+                    @goToCodeEditor="onGoToCodeEditor"
+        ></CodeMirror>
         <Row type="flex" justify="space-between">
           <Col :span="10">
             <div class="status" v-if="statusVisible">
@@ -148,7 +150,6 @@
             <p>{{$t('m.Memory_Limit')}}</p>
             <p>{{problem.memory_limit}}MB</p></li>
           <li>
-          <li>
             <p>{{$t('m.IOMode')}}</p>
             <p>{{problem.io_mode.io_mode}}</p>
           </li>
@@ -210,7 +211,7 @@
   import {pie, largePie} from './chartData'
 
   // 只显示这些状态的图形占用
-  const filtedStatus = ['-1', '-2', '0', '1', '2', '3', '4', '8']
+  const filteredStatus = ['-1', '-2', '0', '1', '2', '3', '4', '8']
 
   export default {
     name: 'Problem',
@@ -312,7 +313,7 @@
       changePie (problemData) {
         // 只显示特定的一些状态
         for (let k in problemData.statistic_info) {
-          if (filtedStatus.indexOf(k) === -1) {
+          if (filteredStatus.indexOf(k) === -1) {
             delete problemData.statistic_info[k]
           }
         }
@@ -347,6 +348,21 @@
       },
       handleRoute (route) {
         this.$router.push(route)
+      },
+      onGoToCodeEditor () {
+        const url = 'https://code.hyyz.izhai.net/'
+        const { input } = this.problem.samples[0]
+        const lang = this.language.toLowerCase()
+        let id = 50
+        if (lang === 'python3') id = 71
+        if (lang === 'java') id = 62
+        const payload = { input: input || '', id }
+        try {
+          const encoded = window.btoa(encodeURIComponent(JSON.stringify(payload)))
+          window.open(`${url}?stdin=${encoded}`, '_blank')
+        } catch (e) {
+          window.open(url, '_blank')
+        }
       },
       onChangeLang (newLang) {
         if (this.problem.template[newLang]) {

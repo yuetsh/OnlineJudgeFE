@@ -138,6 +138,7 @@ export const m = {
   Theme: '主題',
   Reset_to_default_code_definition: '使用預設程式碼設定',
   Upload_file: '上傳文件',
+  GoToCodeEditor: '前往代碼自測網站',
   Monokai: 'Monokai',
   Solarized_Light: '日光燈',
   Material: '材料',

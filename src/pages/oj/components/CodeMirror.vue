@@ -17,6 +17,10 @@
           <Button icon="upload" @click="onUploadFile"></Button>
         </Tooltip>
 
+        <Tooltip :content="this.$i18n.t('m.GoToCodeEditor')" placement="top" style="margin-left: 10px">
+          <Button type="info" icon="code" @click="onGoToCodeEditor"></Button>
+        </Tooltip>
+
         <input type="file" id="file-uploader" style="display: none" @change="onUploadFileDone">
 
       </div>
@@ -139,6 +143,9 @@
       },
       onUploadFile () {
         document.getElementById('file-uploader').click()
+      },
+      onGoToCodeEditor () {
+        this.$emit('goToCodeEditor')
       },
       onUploadFileDone () {
         let f = document.getElementById('file-uploader').files[0]

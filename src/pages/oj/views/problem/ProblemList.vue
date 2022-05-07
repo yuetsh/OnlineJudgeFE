@@ -90,7 +90,7 @@
         tagList: [],
         problemTableColumns: [
           {
-            title: '#',
+            title: 'ID',
             key: '_id',
             width: 80,
             render: (h, params) => {
