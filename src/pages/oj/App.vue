@@ -8,6 +8,7 @@
       <div class="footer">
         <p v-html="website.website_footer"></p>
         <p>Powered by <a href="https://github.com/QingdaoU/OnlineJudge">OnlineJudge</a>
+    &nbsp;Modified by <a href="https://github.com/yuetsh/OnlineJudgeFE">yuetsh</a>
           <span v-if="version">&nbsp; Version: {{ version }}</span>
         </p>
       </div>
