@@ -11,7 +11,7 @@
                   <a @click.stop="goRoute({name: 'profile-setting'})">
                     <div class="mask-content">
                       <Icon type="camera" size="30"></Icon>
-                      <p class="text">change avatar</p>
+                      <p class="text">更换头像</p>
                     </div>
                   </a>
                 </div>

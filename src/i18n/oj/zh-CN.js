@@ -171,14 +171,28 @@ export const m = {
   Profile: '个人信息设置',
   Account: '账号设置',
   Security: '安全设置',
-  // AccoutSetting.vue
+  // AccountSetting.vue
   ChangePassword: '更改密码',
   ChangeEmail: '更改邮箱',
   Update_Password: '更新密码',
+  HowToUploadPic: '把图片拖到这里，或者点击选择图片',
+  YourAvatar: '你的头像将被设置为：',
+  UploadAvatarModal: '上传头像',
+  Upload: '上传',
+  OldPassword: '旧密码',
+  NewPassword: '新密码',
+  NewPasswordAgain: '确认新密码',
+  CurrentPassword: '当前密码',
+  OldEmail: '旧邮箱',
+  NewEmail: '新邮箱',
   // ProfileSetting.vue
   Avatar_Setting: '头像设置',
   Profile_Setting: '个人信息设置',
-  // SecuritySettig
+  School: '学校',
+  Major: '专业',
+  Mood: '心情',
+  Blog: '博客',
+  // SecuritySetting
   Sessions: '登录记录',
   Two_Factor_Authentication: '双因素认证',
   // Login.vue

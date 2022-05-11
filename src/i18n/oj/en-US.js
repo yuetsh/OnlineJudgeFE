@@ -171,14 +171,28 @@ export const m = {
   Profile: 'Profile',
   Account: 'Account',
   Security: 'Security',
-  // AccoutSetting.vue
+  // AccountSetting.vue
   ChangePassword: 'Change Password',
   ChangeEmail: 'Change Email',
   Update_Password: 'Update Password',
+  HowToUploadPic: 'Drop here, or click to select manually',
+  YourAvatar: 'Your avatar will be set to:',
+  UploadAvatarModal: 'upload avatar',
+  Upload: 'upload',
+  OldPassword: 'Old Password',
+  NewPassword: 'New Password',
+  NewPasswordAgain: 'Confirm New Password',
+  CurrentPassword: 'Current Password',
+  OldEmail: 'Old Email',
+  NewEmail: 'New Email',
   // ProfileSetting.vue
   Avatar_Setting: 'Avatar Setting',
   Profile_Setting: 'Profile Setting',
-  // SecuritySettig
+  School: 'School',
+  Major: 'Major',
+  Mood: 'Mood',
+  Blog: 'Blog',
+  // SecuritySetting
   Sessions: 'Sessions',
   Two_Factor_Authentication: 'Two Factor Authentication',
   // Login.vue

@@ -171,14 +171,28 @@ export const m = {
   Profile: '個人資訊設定',
   Account: '帳號設定',
   Security: '安全設定',
-  // AccoutSetting.vue
+  // AccountSetting.vue
   ChangePassword: '更改密碼',
   ChangeEmail: '更改 E-mail',
   Update_Password: '更新密碼',
+  HowToUploadPic: '把圖片拖到這裏，或者點擊選擇圖片',
+  YourAvatar: '你的頭像將被設置爲：',
+  UploadAvatarModal: '上傳頭像',
+  Upload: '上傳',
+  OldPassword: '舊密碼',
+  NewPassword: '新密碼',
+  NewPasswordAgain: '確認新密碼',
+  CurrentPassword: '當前密碼',
+  OldEmail: '舊郵箱',
+  NewEmail: '新郵箱',
   // ProfileSetting.vue
   Avatar_Setting: '大頭貼設定',
   Profile_Setting: '個人資訊設定',
-  // SecuritySettig
+  School: '學校',
+  Major: '專業',
+  Mood: '心情',
+  Blog: '部落格',
+  // SecuritySetting
   Sessions: '登入記錄',
   Two_Factor_Authentication: '兩步驟驗證',
   // Login.vue
