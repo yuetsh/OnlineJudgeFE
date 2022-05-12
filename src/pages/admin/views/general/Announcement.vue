@@ -8,37 +8,20 @@
           ref="table"
           :data="announcementList"
           style="width: 100%">
-          <el-table-column
-            width="100"
-            prop="id"
-            label="ID">
-          </el-table-column>
-          <el-table-column
-            prop="title"
-            label="Title">
-          </el-table-column>
-          <el-table-column
-            prop="create_time"
-            label="CreateTime">
+          <el-table-column width="100" prop="id" label="ID"></el-table-column>
+          <el-table-column prop="title" label="标题"></el-table-column>
+          <el-table-column prop="create_time" label="创建时间">
             <template slot-scope="scope">
               {{ scope.row.create_time | localtime }}
             </template>
           </el-table-column>
-          <el-table-column
-            prop="last_update_time"
-            label="LastUpdateTime">
+          <el-table-column prop="last_update_time" label="上次更新时间">
             <template slot-scope="scope">
               {{scope.row.last_update_time | localtime }}
             </template>
           </el-table-column>
-          <el-table-column
-            prop="created_by.username"
-            label="Author">
-          </el-table-column>
-          <el-table-column
-            width="100"
-            prop="visible"
-            label="Visible">
+          <el-table-column prop="created_by.username" label="作者"></el-table-column>
+          <el-table-column width="100" prop="visible" label="可见">
             <template slot-scope="scope">
               <el-switch v-model="scope.row.visible"
                          active-text=""
@@ -47,10 +30,7 @@
               </el-switch>
             </template>
           </el-table-column>
-          <el-table-column
-            fixed="right"
-            label="Option"
-            width="200">
+          <el-table-column fixed="right" label="选项"  width="120">
             <div slot-scope="scope">
               <icon-btn name="Edit" icon="edit" @click.native="openAnnouncementDialog(scope.row.id)"></icon-btn>
               <icon-btn name="Delete" icon="trash" @click.native="deleteAnnouncement(scope.row.id)"></icon-btn>

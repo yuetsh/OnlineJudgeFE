@@ -21,35 +21,35 @@
         ref="table"
         :data="userList"
         style="width: 100%">
-        <el-table-column type="selection" width="55"></el-table-column>
+        <el-table-column type="selection" width="50"></el-table-column>
 
-        <el-table-column prop="id" label="ID"></el-table-column>
+        <el-table-column prop="id" label="ID" width="80"></el-table-column>
 
-        <el-table-column prop="username" label="Username"></el-table-column>
+        <el-table-column prop="username" label="用户名"></el-table-column>
 
-        <el-table-column prop="create_time" label="Create Time">
+        <el-table-column prop="create_time" label="创建时间">
           <template slot-scope="scope">
             {{scope.row.create_time | localtime }}
           </template>
         </el-table-column>
 
-        <el-table-column prop="last_login" label="Last Login">
+        <el-table-column prop="last_login" label="上次登录">
           <template slot-scope="scope">
             {{scope.row.last_login | localtime }}
           </template>
         </el-table-column>
 
-        <el-table-column prop="real_name" label="Real Name"></el-table-column>
+        <el-table-column prop="real_name" label="真名"></el-table-column>
 
-        <el-table-column prop="email" label="Email"></el-table-column>
+        <el-table-column prop="email" label="邮箱"></el-table-column>
 
-        <el-table-column prop="admin_type" label="User Type">
+        <el-table-column prop="admin_type" label="用户类型">
           <template slot-scope="scope">
             {{ scope.row.admin_type }}
           </template>
         </el-table-column>
 
-        <el-table-column fixed="right" label="Option" width="200">
+        <el-table-column fixed="right" label="选项" width="120">
           <template slot-scope="{row}">
             <icon-btn name="Edit" icon="edit" @click.native="openUserDialog(row.id)"></icon-btn>
             <icon-btn name="Delete" icon="trash" @click.native="deleteUsers([row.id])"></icon-btn>
