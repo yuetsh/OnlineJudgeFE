@@ -15,67 +15,43 @@
         :data="problemList"
         @row-dblclick="handleDblclick"
         style="width: 100%">
-        <el-table-column
-          width="100"
-          prop="id"
-          label="ID">
+        <el-table-column width="100" prop="id" label="ID">
         </el-table-column>
-        <el-table-column
-          width="150"
-          label="Display ID">
+        <el-table-column width="150" label="显示 ID">
           <template slot-scope="{row}">
             <span v-show="!row.isEditing">{{row._id}}</span>
-            <el-input v-show="row.isEditing" v-model="row._id"
-                      @keyup.enter.native="handleInlineEdit(row)">
-
+            <el-input v-show="row.isEditing" v-model="row._id" @keyup.enter.native="handleInlineEdit(row)">
             </el-input>
           </template>
         </el-table-column>
-        <el-table-column
-          prop="title"
-          label="Title">
+        <el-table-column prop="title" label="标题">
           <template slot-scope="{row}">
             <span v-show="!row.isEditing">{{row.title}}</span>
-            <el-input v-show="row.isEditing" v-model="row.title"
-                      @keyup.enter.native="handleInlineEdit(row)">
+            <el-input v-show="row.isEditing" v-model="row.title"  @keyup.enter.native="handleInlineEdit(row)">
             </el-input>
           </template>
         </el-table-column>
-        <el-table-column
-          prop="created_by.username"
-          label="Author">
+        <el-table-column prop="created_by.username" label="作者" width="150">
         </el-table-column>
-        <el-table-column
-          width="200"
-          prop="create_time"
-          label="Create Time">
+        <el-table-column prop="create_time" label="创建时间" width="150">
           <template slot-scope="scope">
             {{scope.row.create_time | localtime }}
           </template>
         </el-table-column>
-        <el-table-column
-          width="100"
-          prop="visible"
-          label="Visible">
+        <el-table-column width="100" prop="visible" label="可见">
           <template slot-scope="scope">
-            <el-switch v-model="scope.row.visible"
-                       active-text=""
-                       inactive-text=""
-                       @change="updateProblem(scope.row)">
+            <el-switch v-model="scope.row.visible" active-text="" inactive-text="" @change="updateProblem(scope.row)">
             </el-switch>
           </template>
         </el-table-column>
-        <el-table-column
-          fixed="right"
-          label="Operation"
-          width="250">
+        <el-table-column  fixed="right" label="选项"  width="200">
           <div slot-scope="scope">
-            <icon-btn name="Edit" icon="edit" @click.native="goEdit(scope.row.id)"></icon-btn>
+            <icon-btn name="编辑" icon="edit" @click.native="goEdit(scope.row.id)"></icon-btn>
             <icon-btn v-if="contestId" name="Make Public" icon="clone"
                       @click.native="makeContestProblemPublic(scope.row.id)"></icon-btn>
-            <icon-btn icon="download" name="Download TestCase"
+            <icon-btn icon="download" name="下载测试用例"
                       @click.native="downloadTestCase(scope.row.id)"></icon-btn>
-            <icon-btn icon="trash" name="Delete Problem"
+            <icon-btn icon="trash" name="删除"
                       @click.native="deleteProblem(scope.row.id)"></icon-btn>
           </div>
         </el-table-column>

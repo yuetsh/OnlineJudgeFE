@@ -32,8 +32,8 @@
           </el-table-column>
           <el-table-column fixed="right" label="选项"  width="120">
             <div slot-scope="scope">
-              <icon-btn name="Edit" icon="edit" @click.native="openAnnouncementDialog(scope.row.id)"></icon-btn>
-              <icon-btn name="Delete" icon="trash" @click.native="deleteAnnouncement(scope.row.id)"></icon-btn>
+              <icon-btn name="编辑" icon="edit" @click.native="openAnnouncementDialog(scope.row.id)"></icon-btn>
+              <icon-btn name="删除" icon="trash" @click.native="deleteAnnouncement(scope.row.id)"></icon-btn>
             </div>
           </el-table-column>
         </el-table>

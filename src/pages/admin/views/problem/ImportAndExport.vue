@@ -16,27 +16,15 @@
           type="selection"
           width="60">
         </el-table-column>
-        <el-table-column
-          label="ID"
-          width="100"
-          prop="id">
+        <el-table-column label="ID" width="100" prop="id">
         </el-table-column>
-        <el-table-column
-          label="DisplayID"
-          width="200"
-          prop="_id">
+        <el-table-column label="显示 ID" width="150" prop="_id">
         </el-table-column>
-        <el-table-column
-          label="Title"
-          prop="title">
+        <el-table-column label="标题" prop="title">
         </el-table-column>
-        <el-table-column
-          prop="created_by.username"
-          label="Author">
+        <el-table-column prop="created_by.username" label="作者" width="150">
         </el-table-column>
-        <el-table-column
-          prop="create_time"
-          label="Create Time">
+        <el-table-column prop="create_time" label="创建时间" width="200">
           <template slot-scope="scope">
             {{scope.row.create_time | localtime }}
           </template>

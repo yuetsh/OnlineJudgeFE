@@ -52,11 +52,11 @@
 
     <el-col :md="14" :lg="16" v-if="isSuperAdmin">
       <div class="info-container">
-        <info-card color="#909399" icon="el-icon-fa-users" message="Total Users" iconSize="30px" class="info-item"
+        <info-card color="#909399" icon="el-icon-fa-users" message="总用户数" iconSize="30px" class="info-item"
                    :value="infoData.user_count"></info-card>
-        <info-card color="#67C23A" icon="el-icon-fa-list" message="Today Submissions" class="info-item"
+        <info-card color="#67C23A" icon="el-icon-fa-list" message="今日提交" class="info-item"
                    :value="infoData.today_submission_count"></info-card>
-        <info-card color="#409EFF" icon="el-icon-fa-trophy" message="Recent Contests" class="info-item"
+        <info-card color="#409EFF" icon="el-icon-fa-trophy" message="近期比赛" class="info-item"
                    :value="infoData.recent_contest_count"></info-card>
       </div>
       <panel style="margin-top: 5px">

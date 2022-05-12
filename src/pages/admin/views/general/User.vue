@@ -51,8 +51,8 @@
 
         <el-table-column fixed="right" label="选项" width="120">
           <template slot-scope="{row}">
-            <icon-btn name="Edit" icon="edit" @click.native="openUserDialog(row.id)"></icon-btn>
-            <icon-btn name="Delete" icon="trash" @click.native="deleteUsers([row.id])"></icon-btn>
+            <icon-btn name="编辑" icon="edit" @click.native="openUserDialog(row.id)"></icon-btn>
+            <icon-btn name="删除" icon="trash" @click.native="deleteUsers([row.id])"></icon-btn>
           </template>
         </el-table-column>
       </el-table>

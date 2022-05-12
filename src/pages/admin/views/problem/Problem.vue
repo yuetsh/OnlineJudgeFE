@@ -116,7 +116,7 @@
           <el-form-item v-for="(sample, index) in problem.samples" :key="'sample'+index">
             <Accordion :title="'Sample' + (index + 1)">
               <el-button type="warning" size="small" icon="el-icon-delete" slot="header" @click="deleteSample(index)">
-                Delete
+                删除
               </el-button>
               <el-row :gutter="20">
                 <el-col :span="12">
@@ -203,7 +203,7 @@
                 :show-file-list="true"
                 :on-success="uploadSucceeded"
                 :on-error="uploadFailed">
-                <el-button size="small" type="primary" icon="el-icon-fa-upload">Choose File</el-button>
+                <el-button size="small" type="primary" icon="el-icon-fa-upload">上传文件</el-button>
               </el-upload>
             </el-form-item>
           </el-col>
@@ -519,7 +519,7 @@
           }
         }
         if (!this.problem.tags.length) {
-          this.error.tags = 'Please add at least one tag'
+          this.error.tags = '至少要添加一个测试用例'
           this.$error(this.error.tags)
           return
         }
