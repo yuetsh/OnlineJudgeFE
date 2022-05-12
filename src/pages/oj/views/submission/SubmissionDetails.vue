@@ -25,17 +25,21 @@
     <Col :span="20">
       <Highlight :code="submission.code" :language="submission.language" :border-color="status.color"></Highlight>
     </Col>
-    <Col v-if="submission.can_unshare" :span="20">
-      <div id="share-btn">
-        <Button v-if="submission.shared"
-                type="warning" size="large" @click="shareSubmission(false)">
-          {{$t('m.UnShare')}}
-        </Button>
-        <Button v-else
-                type="primary" size="large" @click="shareSubmission(true)">
-          {{$t('m.Share')}}
-        </Button>
-      </div>
+    
+    <Col :span="20">
+      <Row type="flex" justify="end" :gutter="16">
+        <Col>
+          <Button type="success" size="large" @click="copySubmissionCode">暂时不完美的复制</Button>
+        </Col>
+        <Col v-if="submission.can_unshare">
+          <Button v-if="submission.shared" type="warning" size="large" @click="shareSubmission(false)">
+            {{$t('m.UnShare')}}
+          </Button>
+          <Button v-else type="primary" size="large" @click="shareSubmission(true)">
+            {{$t('m.Share')}}
+          </Button>
+        </Col>
+      </Row>
     </Col>
   </Row>
 
@@ -153,6 +157,14 @@
           this.$success(this.$i18n.t('m.Succeeded'))
         }, () => {
         })
+      },
+      copySubmissionCode () {
+        const i = document.createElement('input')
+        i.setAttribute('value', this.submission.code)
+        document.body.appendChild(i)
+        i.select()
+        document.execCommand('copy')
+        document.body.removeChild(i)
       }
     },
     computed: {
@@ -191,19 +203,12 @@
       }
     }
   }
-
   .admin-info {
     margin: 5px 0;
     &-content {
       font-size: 16px;
       padding: 10px;
     }
-  }
-
-  #share-btn {
-    float: right;
-    margin-top: 5px;
-    margin-right: 10px;
   }
 
   pre {
