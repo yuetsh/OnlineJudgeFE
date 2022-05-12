@@ -29,7 +29,7 @@
     <Col :span="20">
       <Row type="flex" justify="end" :gutter="16">
         <Col>
-          <Button type="success" size="large" @click="copySubmissionCode">暂时不完美的复制</Button>
+          <Button type="success" size="large" v-clipboard:copy="submission.code">复制</Button>
         </Col>
         <Col v-if="submission.can_unshare">
           <Button v-if="submission.shared" type="warning" size="large" @click="shareSubmission(false)">
@@ -157,14 +157,6 @@
           this.$success(this.$i18n.t('m.Succeeded'))
         }, () => {
         })
-      },
-      copySubmissionCode () {
-        const i = document.createElement('input')
-        i.setAttribute('value', this.submission.code)
-        document.body.appendChild(i)
-        i.select()
-        document.execCommand('copy')
-        document.body.removeChild(i)
       }
     },
     computed: {

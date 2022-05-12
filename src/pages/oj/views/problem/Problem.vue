@@ -435,7 +435,10 @@
           api.submitCode(data).then(res => {
             this.submissionId = res.data.data && res.data.data.submission_id
             // 定时检查状态
-            this.submitting = false
+            const loadingID = setTimeout(() => {
+              this.submitting = false
+              clearTimeout(loadingID)
+            }, 5000)
             this.submissionExists = true
             if (!detailsVisible) {
               this.$Modal.success({
