@@ -404,14 +404,20 @@
               clearTimeout(this.refreshStatus)
               this.init()
             } else {
-              this.refreshStatus = setTimeout(checkStatus, 2000)
+              this.refreshStatus = setTimeout(() => {
+                checkStatus()
+                clearTimeout(this.refreshStatus)
+              }, 2000)
             }
           }, res => {
             this.submitting = false
             clearTimeout(this.refreshStatus)
           })
         }
-        this.refreshStatus = setTimeout(checkStatus, 2000)
+        this.refreshStatus = setTimeout(() => {
+          checkStatus()
+          clearTimeout(this.refreshStatus)
+        }, 2000)
       },
       submitCode () {
         if (this.code.trim() === '') {
@@ -466,8 +472,9 @@
               content: '<h3>' + this.$i18n.t('m.You_have_submission_in_this_problem_sure_to_cover_it') + '<h3>',
               onOk: () => {
                 // 暂时解决对话框与后面提示对话框冲突的问题(否则一闪而过）
-                setTimeout(() => {
+                const submitID = setTimeout(() => {
                   submitFunc(data, false)
+                  clearTimeout(submitID)
                 }, 1000)
               },
               onCancel: () => {
@@ -643,4 +650,3 @@
     height: 480px;
   }
 </style>
-

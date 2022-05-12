@@ -136,7 +136,7 @@ export const m = {
   // CodeMirror.vue
   Language: 'Language',
   Theme: 'Theme',
-  Reset_to_default_code_definition: 'Reset to default code definition',
+  Reset_to_default_code_definition: 'Reset',
   Upload_file: 'Upload file',
   GoToCodeEditor: 'Go to code editor',
   Monokai: 'Monokai',

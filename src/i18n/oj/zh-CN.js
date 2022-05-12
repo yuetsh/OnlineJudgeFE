@@ -136,7 +136,7 @@ export const m = {
   // CodeMirror.vue
   Language: '语言',
   Theme: '主题',
-  Reset_to_default_code_definition: '重设返回默认代码设置',
+  Reset_to_default_code_definition: '重置',
   Upload_file: '上传文件',
   GoToCodeEditor: '前往代码自测网站',
   Monokai: 'Monokai',
