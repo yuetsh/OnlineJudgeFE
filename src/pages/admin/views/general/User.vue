@@ -6,7 +6,7 @@
           <el-col :span="8">
             <el-button v-show="selectedUsers.length"
                        type="warning" icon="el-icon-fa-trash"
-                       @click="deleteUsers(selectedUserIDs)">Delete
+                       @click="deleteUsers(selectedUserIDs)">删除
             </el-button>
           </el-col>
           <el-col :span="selectedUsers.length ? 16: 24">
@@ -25,7 +25,12 @@
 
         <el-table-column prop="id" label="ID" width="80"></el-table-column>
 
-        <el-table-column prop="username" label="用户名"></el-table-column>
+        <el-table-column prop="username" label="用户名">
+          <template slot-scope="scope">
+            <el-tag v-if="scope.row.is_disabled" type="danger" size="mini">封号中</el-tag>
+            {{scope.row.username }}
+          </template>
+        </el-table-column>
 
         <el-table-column prop="create_time" label="创建时间">
           <template slot-scope="scope">
@@ -39,9 +44,9 @@
           </template>
         </el-table-column>
 
-        <el-table-column prop="real_name" label="真名"></el-table-column>
+        <el-table-column prop="real_name" label="真名" width="80"></el-table-column>
 
-        <el-table-column prop="email" label="邮箱"></el-table-column>
+        <el-table-column prop="email" label="邮箱" width="200"></el-table-column>
 
         <el-table-column prop="admin_type" label="用户类型">
           <template slot-scope="scope">
@@ -80,7 +85,7 @@
                  :show-file-list="false"
                  accept=".csv"
                  :before-upload="handleUsersCSV">
-        <el-button size="small" icon="el-icon-fa-upload" type="primary">Choose File</el-button>
+        <el-button size="small" icon="el-icon-fa-upload" type="primary">上传文件</el-button>
       </el-upload>
       <template v-else>
         <el-table :data="uploadUsersPage">
@@ -108,11 +113,11 @@
         <div class="panel-options">
           <el-button type="primary" size="small"
                      icon="el-icon-fa-upload"
-                     @click="handleUsersUpload">Import All
+                     @click="handleUsersUpload">全部导入
           </el-button>
           <el-button type="warning" size="small"
                      icon="el-icon-fa-undo"
-                     @click="handleResetData">Reset Data
+                     @click="handleResetData">重置
           </el-button>
           <el-pagination
             class="page"
@@ -129,27 +134,27 @@
       <el-form :model="formGenerateUser" ref="formGenerateUser">
         <el-row type="flex" justify="space-between">
           <el-col :span="4">
-            <el-form-item label="Prefix" prop="prefix">
+            <el-form-item label="前缀" prop="prefix">
               <el-input v-model="formGenerateUser.prefix" placeholder="Prefix"></el-input>
             </el-form-item>
           </el-col>
           <el-col :span="4">
-            <el-form-item label="Suffix" prop="suffix">
+            <el-form-item label="后缀" prop="suffix">
               <el-input v-model="formGenerateUser.suffix" placeholder="Suffix"></el-input>
             </el-form-item>
           </el-col>
           <el-col :span="4">
-            <el-form-item label="Start Number" prop="number_from" required>
+            <el-form-item label="开始于" prop="number_from" required>
               <el-input-number v-model="formGenerateUser.number_from" style="width: 100%"></el-input-number>
             </el-form-item>
           </el-col>
           <el-col :span="4">
-            <el-form-item label="End Number" prop="number_to" required>
+            <el-form-item label="结束于" prop="number_to" required>
               <el-input-number v-model="formGenerateUser.number_to" style="width: 100%"></el-input-number>
             </el-form-item>
           </el-col>
           <el-col :span="4">
-            <el-form-item label="Password Length" prop="password_length" required>
+            <el-form-item label="密码长度" prop="password_length" required>
               <el-input v-model="formGenerateUser.password_length"
                         placeholder="Password Length"></el-input>
             </el-form-item>
@@ -157,11 +162,10 @@
         </el-row>
 
         <el-form-item>
-          <el-button type="primary" @click="generateUser" icon="el-icon-fa-users" :loading="loadingGenerate">Generate & Export
-          </el-button>
+          <el-button type="primary" @click="generateUser" icon="el-icon-fa-users" :loading="loadingGenerate">生成并导出</el-button>
           <span class="userPreview" v-if="formGenerateUser.number_from && formGenerateUser.number_to &&
                                           formGenerateUser.number_from <= formGenerateUser.number_to">
-            The usernames will be {{formGenerateUser.prefix + formGenerateUser.number_from + formGenerateUser.suffix}},
+            用户名将会是 {{formGenerateUser.prefix + formGenerateUser.number_from + formGenerateUser.suffix}},
             <span v-if="formGenerateUser.number_from + 1 < formGenerateUser.number_to">
               {{formGenerateUser.prefix + (formGenerateUser.number_from + 1) + formGenerateUser.suffix + '...'}}
             </span>
