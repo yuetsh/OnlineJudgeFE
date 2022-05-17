@@ -1,26 +1,26 @@
 <template>
   <div style="margin: 0px 0px 15px 0px">
     <Row type="flex" justify="space-between" class="header">
-      <Col :span=12>
-      <div>
-        <span>{{$t('m.Language')}}:</span>
-        <Select :value="language" @on-change="onLangChange" class="adjust">
-          <Option v-for="item in languages" :key="item" :value="item">{{item}}</Option>
-        </Select>
-        <Button @click="onResetClick">{{$t('m.Reset_to_default_code_definition')}}</Button>
-        <Button @click="onUploadFile">{{$t('m.Upload_file')}}</Button>
-        <Button type="success" @click="onGoToCodeEditor">{{$t('m.GoToCodeEditor')}}</Button>
-        <input type="file" id="file-uploader" style="display: none" @change="onUploadFileDone">
-      </div>
+      <Col :span=16>
+        <div>
+          <span>{{$t('m.Language')}}:</span>
+          <Select :value="language" @on-change="onLangChange" class="adjust">
+            <Option v-for="item in languages" :key="item" :value="item">{{item}}</Option>
+          </Select>
+          <Button @click="onResetClick">{{$t('m.Reset_to_default_code_definition')}}</Button>
+          <Button @click="onUploadFile">{{$t('m.Upload_file')}}</Button>
+          <Button type="success" @click="onGoToCodeEditor">{{$t('m.GoToCodeEditor')}}</Button>
+          <input type="file" id="file-uploader" style="display: none" @change="onUploadFileDone">
+        </div>
       </Col>
-      <Col :span=12>
-      <div class="fl-right">
-        <span>{{$t('m.Theme')}}:</span>
-        <Select :value="theme" @on-change="onThemeChange" class="adjust">
-          <Option v-for="item in themes" :key="item.label" :value="item.value">{{item.label}}
-          </Option>
-        </Select>
-      </div>
+      <Col :span=8>
+        <div class="fl-right">
+          <span>{{$t('m.Theme')}}:</span>
+          <Select :value="theme" @on-change="onThemeChange" class="adjust">
+            <Option v-for="item in themes" :key="item.label" :value="item.value">{{item.label}}
+            </Option>
+          </Select>
+        </div>
       </Col>
     </Row>
     <codemirror :value="value" :options="options" @change="onEditorCodeChange" ref="myEditor">
@@ -34,6 +34,9 @@
   // theme
   import 'codemirror/theme/monokai.css'
   import 'codemirror/theme/solarized.css'
+  import 'codemirror/theme/darcula.css'
+  import 'codemirror/theme/nord.css'
+  import 'codemirror/theme/panda-syntax.css'
   import 'codemirror/theme/material.css'
 
   // mode
@@ -99,7 +102,10 @@
         themes: [
           {label: this.$i18n.t('m.Monokai'), value: 'monokai'},
           {label: this.$i18n.t('m.Solarized_Light'), value: 'solarized'},
-          {label: this.$i18n.t('m.Material'), value: 'material'}
+          {label: this.$i18n.t('m.Material'), value: 'material'},
+          {label: this.$i18n.t('m.Darcula'), value: 'darcula'},
+          {label: this.$i18n.t('m.Nord'), value: 'nord'},
+          {label: this.$i18n.t('m.Panda_Syntax'), value: 'panda-syntax'}
         ]
       }
     },
@@ -165,7 +171,7 @@
   .header {
     margin: 5px 5px 15px 5px;
     .adjust {
-      width: 150px;
+      width: 120px;
       margin-left: 10px;
     }
     .fl-right {

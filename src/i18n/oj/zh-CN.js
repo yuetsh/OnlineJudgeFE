@@ -137,11 +137,14 @@ export const m = {
   Language: '语言',
   Theme: '主题',
   Reset_to_default_code_definition: '重置',
-  Upload_file: '上传文件',
-  GoToCodeEditor: '前往代码自测网站',
+  Upload_file: '文件',
+  GoToCodeEditor: '自测',
   Monokai: 'Monokai',
   Solarized_Light: 'Solarized Light',
   Material: 'Material',
+  Darcula: 'Darcula',
+  Nord: 'Nord',
+  Panda_Syntax: 'Panda Syntax',
   // KatexEditor.vue
   Latex_Editor: 'Latex 编辑器',
   // NavBar.vue
@@ -269,7 +272,7 @@ export const m = {
   Rejudge: '重新评分',
   // UserHome.vue
   UserHomeSolved: '已解决问题的数量',
-  UserHomeserSubmissions: '提交次数',
+  UserHomeSubmissions: '提交次数',
   UserHomeScore: '分数',
   List_Solved_Problems: '已解决问题的列表',
   UserHomeIntro: '这个家伙太懒了，还没有做题呢...'

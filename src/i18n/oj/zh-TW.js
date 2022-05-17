@@ -136,12 +136,15 @@ export const m = {
   // CodeMirror.vue
   Language: '語言',
   Theme: '主題',
-  Reset_to_default_code_definition: '使用預設程式碼設定',
-  Upload_file: '上傳文件',
-  GoToCodeEditor: '前往代碼自測網站',
+  Reset_to_default_code_definition: '預設',
+  Upload_file: '文件',
+  GoToCodeEditor: '自測',
   Monokai: 'Monokai',
-  Solarized_Light: '日光燈',
-  Material: '材料',
+  Solarized_Light: 'Solarized Light',
+  Material: 'Material',
+  Darcula: 'Darcula',
+  Nord: 'Nord',
+  Panda_Syntax: 'Panda Syntax',
   // KatexEditor.vue
   Latex_Editor: 'Latex 編輯器',
   // NavBar.vue
@@ -269,7 +272,7 @@ export const m = {
   Rejudge: 'Rejudge',
   // UserHome.vue
   UserHomeSolved: '已解題數量',
-  UserHomeserSubmissions: '提交次數',
+  UserHomeSubmissions: '提交次數',
   UserHomeScore: '分數',
   List_Solved_Problems: '已完成題目的列表',
   UserHomeIntro: '這個使用者尚未解題...'

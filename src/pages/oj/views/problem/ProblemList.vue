@@ -1,6 +1,6 @@
 <template>
   <Row type="flex" :gutter="18">
-    <Col :span=19>
+    <Col :span="18">
     <Panel shadow>
       <div slot="title">{{$t('m.Problem_List')}}</div>
       <div slot="extra">
@@ -28,8 +28,7 @@
             <Input v-model="query.keyword"
                    @on-enter="filterByKeyword"
                    @on-click="filterByKeyword"
-                   placeholder="keyword"
-                   icon="ios-search-strong"/>
+                   placeholder="Keywords"/>
           </li>
           <li>
             <Button type="info" @click="onReset">
@@ -39,19 +38,23 @@
           </li>
         </ul>
       </div>
-      <Table style="width: 100%; font-size: 16px;"
+      <Table style="cursor: pointer;"
              :columns="problemTableColumns"
              :data="problemList"
              :loading="loadings.table"
-             disabled-hover></Table>
+             @on-row-click="goToProblem"></Table>
     </Panel>
     <Pagination
-      :total="total" :page-size.sync="query.limit" @on-change="pushRouter" @on-page-size-change="pushRouter" :current.sync="query.page" :show-sizer="true"></Pagination>
+      :total="total" 
+      :page-size.sync="query.limit" 
+      @on-change="pushRouter" 
+      @on-page-size-change="pushRouter" 
+      :current.sync="query.page" 
+      :show-sizer="true"></Pagination>
 
     </Col>
-
-    <Col :span="5">
-    <Panel :padding="10">
+    <Col :span="6">
+    <Panel shadow :padding="10">
       <div slot="title" class="taglist-title">{{$t('m.Tags')}}</div>
       <Button v-for="tag in tagList"
               :key="tag.name"
@@ -92,46 +95,12 @@
           {
             title: 'ID',
             key: '_id',
-            width: 80,
-            render: (h, params) => {
-              return h('Button', {
-                props: {
-                  type: 'text',
-                  size: 'large'
-                },
-                on: {
-                  click: () => {
-                    this.$router.push({name: 'problem-details', params: {problemID: params.row._id}})
-                  }
-                },
-                style: {
-                  padding: '2px 0'
-                }
-              }, params.row._id)
-            }
+            width: 80
           },
           {
             title: this.$i18n.t('m.Title'),
             width: 400,
-            render: (h, params) => {
-              return h('Button', {
-                props: {
-                  type: 'text',
-                  size: 'large'
-                },
-                on: {
-                  click: () => {
-                    this.$router.push({name: 'problem-details', params: {problemID: params.row._id}})
-                  }
-                },
-                style: {
-                  padding: '2px 0',
-                  overflowX: 'auto',
-                  textAlign: 'left',
-                  width: '100%'
-                }
-              }, params.row.title)
-            }
+            key: 'title'
           },
           {
             title: this.$i18n.t('m.Level'),
@@ -214,6 +183,9 @@
         }, res => {
           this.loadings.table = false
         })
+      },
+      goToProblem (row) {
+        this.$router.push({name: 'problem-details', params: {problemID: row._id}})
       },
       getTagList () {
         api.getProblemTagList().then(res => {

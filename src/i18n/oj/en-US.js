@@ -142,6 +142,9 @@ export const m = {
   Monokai: 'Monokai',
   Solarized_Light: 'Solarized Light',
   Material: 'Material',
+  Darcula: 'Darcula',
+  Nord: 'Nord',
+  Panda_Syntax: 'Panda Syntax',
   // KatexEditor.vue
   Latex_Editor: 'Latex Editor',
   // NavBar.vue
@@ -269,7 +272,7 @@ export const m = {
   Rejudge: 'Rejudge',
   // UserHome.vue
   UserHomeSolved: 'Solved',
-  UserHomeserSubmissions: 'Submissions',
+  UserHomeSubmissions: 'Submissions',
   UserHomeScore: 'Score',
   List_Solved_Problems: 'List of solved problems',
   UserHomeIntro: 'The guy is so lazy that has not solved any problem yet.'

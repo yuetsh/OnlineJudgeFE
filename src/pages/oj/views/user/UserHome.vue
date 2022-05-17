@@ -20,7 +20,7 @@
             <p class="emphasis">{{profile.accepted_number}}</p>
           </div>
           <div class="middle">
-            <p>{{$t('m.UserHomeserSubmissions')}}</p>
+            <p>{{$t('m.UserHomeSubmissions')}}</p>
             <p class="emphasis">{{profile.submission_number}}</p>
           </div>
           <div class="right">
