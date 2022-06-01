@@ -152,7 +152,7 @@ export const m = {
   Home: 'Home',
   NavProblems: 'Problems',
   Contests: 'Contests',
-  NavStatus: 'Status',
+  NavSubmissions: 'Submissions',
   Rank: 'Rank',
   ACM_Rank: 'ACM Rank',
   OI_Rank: 'OI Rank',

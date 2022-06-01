@@ -152,7 +152,7 @@ export const m = {
   Home: '首页',
   NavProblems: '问题',
   Contests: '练习 & 比赛',
-  NavStatus: '状态',
+  NavSubmissions: '提交',
   Rank: '排名',
   ACM_Rank: 'ACM 排名',
   OI_Rank: 'OI 排名',

@@ -16,7 +16,7 @@
       </Menu-item>
       <Menu-item name="/status">
         <Icon type="ios-pulse-strong"></Icon>
-        {{$t('m.NavStatus')}}
+        {{$t('m.NavSubmissions')}}
       </Menu-item>
       <Submenu name="rank">
         <template slot="title">
