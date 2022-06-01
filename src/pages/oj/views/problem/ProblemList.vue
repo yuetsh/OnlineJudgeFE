@@ -95,15 +95,16 @@
           {
             title: 'ID',
             key: '_id',
-            width: 80
+            width: 100
           },
           {
             title: this.$i18n.t('m.Title'),
-            width: 400,
             key: 'title'
           },
           {
             title: this.$i18n.t('m.Level'),
+            align: 'center',
+            width: 100,
             render: (h, params) => {
               let t = params.row.difficulty
               let color = 'blue'
@@ -118,10 +119,14 @@
           },
           {
             title: this.$i18n.t('m.Total'),
+            align: 'center',
+            width: 100,
             key: 'submission_number'
           },
           {
             title: this.$i18n.t('m.AC_Rate'),
+            align: 'center',
+            width: 100,
             render: (h, params) => {
               return h('span', this.getACRate(params.row.accepted_number, params.row.submission_number))
             }

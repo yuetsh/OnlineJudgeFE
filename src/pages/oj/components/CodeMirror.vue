@@ -9,6 +9,7 @@
           </Select>
           <Button @click="onResetClick">{{$t('m.Reset_to_default_code_definition')}}</Button>
           <Button @click="onUploadFile">{{$t('m.Upload_file')}}</Button>
+          <Button @click="onPaste">{{$t('m.Paste')}}</Button>
           <Button type="success" @click="onGoToCodeEditor">{{$t('m.GoToCodeEditor')}}</Button>
           <input type="file" id="file-uploader" style="display: none" @change="onUploadFileDone">
         </div>
@@ -137,6 +138,9 @@
       },
       onUploadFile () {
         document.getElementById('file-uploader').click()
+      },
+      onPaste () {
+        this.$emit('paste')
       },
       onGoToCodeEditor () {
         this.$emit('goToCodeEditor')

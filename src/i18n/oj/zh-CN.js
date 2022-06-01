@@ -138,6 +138,7 @@ export const m = {
   Theme: '主题',
   Reset_to_default_code_definition: '重置',
   Upload_file: '文件',
+  Paste: '粘贴',
   GoToCodeEditor: '自测',
   Monokai: 'Monokai',
   Solarized_Light: 'Solarized Light',

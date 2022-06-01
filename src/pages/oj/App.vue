@@ -73,6 +73,10 @@
     }
   }
 
+  .ivu-table {
+    font-size: 14px;
+  }
+
 
   @media screen and (max-width: 1200px) {
   .content-app {

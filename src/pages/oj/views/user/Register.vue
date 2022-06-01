@@ -24,7 +24,7 @@
       <FormItem prop="captcha" style="margin-bottom:10px">
         <div class="oj-captcha">
           <div class="oj-captcha-code">
-            <Input v-model="formRegister.captcha" :placeholder="$t('m.Captcha')" size="large">
+            <Input v-model="formRegister.captcha" :placeholder="$t('m.Captcha')" size="large" @on-enter="handleRegister">
               <Icon type="ios-lightbulb-outline" slot="prepend"></Icon>
             </Input>
           </div>

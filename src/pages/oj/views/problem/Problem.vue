@@ -58,6 +58,7 @@
                     @changeTheme="onChangeTheme"
                     @changeLang="onChangeLang"
                     @goToCodeEditor="onGoToCodeEditor"
+                    @paste="onPaste"
         ></CodeMirror>
         <Row type="flex" justify="space-between">
           <Col :span="10">
@@ -135,7 +136,7 @@
         </template>
       </VerticalMenu>
 
-      <Card id="info">
+      <Card id="info" dis-hover>
         <div slot="title" class="header">
           <Icon type="information-circled"></Icon>
           <span class="card-title">{{$t('m.Information')}}</span>
@@ -177,7 +178,7 @@
         </ul>
       </Card>
 
-      <Card id="pieChart" :padding="0" v-if="!this.contestID || OIContestRealTimePermission">
+      <Card id="pieChart" :padding="0" v-if="!this.contestID || OIContestRealTimePermission" dis-hover>
         <div slot="title">
           <Icon type="ios-analytics"></Icon>
           <span class="card-title">{{$t('m.Statistic')}}</span>
@@ -364,6 +365,14 @@
           window.open(url, '_blank')
         }
       },
+      async onPaste () {
+        try {
+          const content = await navigator.clipboard.readText()
+          this.code = content
+        } catch (e) {
+          console.error(e)
+        }
+      },
       onChangeLang (newLang) {
         if (this.problem.template[newLang]) {
           if (this.code.trim() === '') {
@@ -489,10 +498,10 @@
         }
       },
       onCopy (event) {
-        this.$success('Code copied')
+        this.$success('复制成功')
       },
       onCopyError (e) {
-        this.$error('Failed to copy code')
+        this.$error('复制失败')
       }
     },
     computed: {

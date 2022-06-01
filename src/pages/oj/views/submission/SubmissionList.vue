@@ -65,6 +65,7 @@
         columns: [
           {
             title: this.$i18n.t('m.When'),
+            width: 180,
             align: 'center',
             render: (h, params) => {
               return h('span', time.utcToLocal(params.row.create_time))
