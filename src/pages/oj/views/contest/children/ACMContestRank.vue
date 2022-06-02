@@ -67,7 +67,7 @@
         columns: [
           {
             align: 'center',
-            width: 50,
+            width: 80,
             fixed: 'left',
             render: (h, params) => {
               return h('span', {}, params.index + (this.page - 1) * this.limit + 1)
