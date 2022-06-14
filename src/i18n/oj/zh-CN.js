@@ -150,7 +150,7 @@ export const m = {
   Latex_Editor: 'Latex 编辑器',
   // NavBar.vue
   Home: '首页',
-  NavProblems: '问题',
+  NavProblems: '问题列表',
   Contests: '练习 & 比赛',
   NavSubmissions: '提交记录',
   Rank: '排名',

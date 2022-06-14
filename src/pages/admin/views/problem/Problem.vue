@@ -519,7 +519,7 @@
           }
         }
         if (!this.problem.tags.length) {
-          this.error.tags = '至少要添加一个测试用例'
+          this.error.tags = '至少要添加一个标签'
           this.$error(this.error.tags)
           return
         }
