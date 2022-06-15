@@ -76,11 +76,7 @@
             align: 'center',
             render: (h, params) => {
               if (params.row.show_link) {
-                return h('span', {
-                  style: {
-                    color: '#57a3f3',
-                    cursor: 'pointer'
-                  },
+                return h('a', {
                   on: {
                     click: () => {
                       this.$router.push('/status/' + params.row.id)
@@ -88,7 +84,7 @@
                   }
                 }, params.row.id.slice(0, 12))
               } else {
-                return h('span', params.row.id.slice(0, 12))
+                return h('a', params.row.id.slice(0, 12))
               }
             }
           },
@@ -107,12 +103,8 @@
             title: this.$i18n.t('m.Problem'),
             align: 'center',
             render: (h, params) => {
-              return h('span',
+              return h('a',
                 {
-                  style: {
-                    color: '#57a3f3',
-                    cursor: 'pointer'
-                  },
                   on: {
                     click: () => {
                       if (this.contestID) {
