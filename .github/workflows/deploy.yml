@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 'current'
           cache: 'npm'
-      - run: npm install
+      - run: npm install --silent
       - run: npm run build:dll
       - run: npm run build
 
