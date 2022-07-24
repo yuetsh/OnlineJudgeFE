@@ -203,6 +203,7 @@
 
 <script>
   import {mapGetters, mapActions} from 'vuex'
+  import party from 'party-js'
   import {types} from '../../../../store'
   import CodeMirror from '@oj/components/CodeMirror.vue'
   import storage from '@/utils/storage'
@@ -541,6 +542,14 @@
     watch: {
       '$route' () {
         this.init()
+      },
+      'result.result' (newVal) {
+        if (newVal === 0) {
+          party.confetti(document.body, {
+            count: party.variation.range(200, 400),
+            size: party.variation.skew(2, 0.3)
+          })
+        }
       }
     }
   }
