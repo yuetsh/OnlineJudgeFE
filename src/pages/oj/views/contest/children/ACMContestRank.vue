@@ -63,6 +63,7 @@
       return {
         total: 0,
         page: 1,
+        limit: 50,
         contestID: '',
         columns: [
           {
