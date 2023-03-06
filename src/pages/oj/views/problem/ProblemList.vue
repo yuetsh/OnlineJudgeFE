@@ -27,14 +27,13 @@
           <li>
             <Input v-model="query.keyword"
                    @on-enter="filterByKeyword"
-                   @on-click="filterByKeyword"
-                   placeholder="Keywords"/>
+                   @on-click="filterByKeyword                   :placeholder="$t('m.Search_Placeholder')"/>
           </li>
           <li>
-            <Button type="info" @click="onReset">
-              <Icon type="refresh"></Icon>
-              {{$t('m.Reset')}}
-            </Button>
+            <Button type="info" @click="filterByKeyword">{{$t('m.Search')}}</Button>
+          </li>
+          <li>
+            <Button @click="onReset">{{$t('m.Reset')}}</Button>
           </li>
         </ul>
       </div>

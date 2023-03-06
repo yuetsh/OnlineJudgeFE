@@ -222,6 +222,8 @@ export const m = {
   Difficulty: 'Difficulty',
   Total: 'Total',
   AC_Rate: 'AC Rate',
+  Search: 'Search',
+  Search_Placeholder: 'Keywords',
   // Register.vue
   RegisterUsername: 'Username',
   Email_Address: 'Email Address',

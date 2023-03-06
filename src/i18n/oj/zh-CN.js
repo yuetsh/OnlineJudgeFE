@@ -231,6 +231,8 @@ export const m = {
   Difficulty: '难度',
   Total: '总数',
   AC_Rate: '通过率',
+  Search: '搜索',
+  Search_Placeholder: '标题关键字或题目编号',
   // Register.vue
   RegisterUsername: '用户名',
   Email_Address: '电子邮箱',
