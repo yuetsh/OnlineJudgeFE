@@ -27,7 +27,8 @@
           <li>
             <Input v-model="query.keyword"
                    @on-enter="filterByKeyword"
-                   @on-click="filterByKeyword                   :placeholder="$t('m.Search_Placeholder')"/>
+                   @on-click="filterByKeyword"
+                   :placeholder="$t('m.Search_Placeholder')"/>
           </li>
           <li>
             <Button type="info" @click="filterByKeyword">{{$t('m.Search')}}</Button>
